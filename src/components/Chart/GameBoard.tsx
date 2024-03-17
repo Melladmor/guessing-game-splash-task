@@ -1,25 +1,12 @@
 import { useSelector } from "react-redux";
-
 import { Box, useTheme } from "@mui/material";
 import { gameState } from "../../redux/slices/gameSlice";
 import CountUp from "react-countup";
-import { calcSpeed, createMatrix } from "../../helper/helper";
+import { calcSpeed, fillArrayWithTarget } from "../../helper/helper";
 import { Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import { selectMultiplierVlaue } from "../../redux/slices/multiplierSlice";
-import { useCallback, useMemo } from "react";
-const matrixArray: Matrix[] = [
-  { value: 0, x: "0" },
-  { value: 0, x: "1" },
-  { value: 0, x: "2" },
-  { value: 0, x: "3" },
-  { value: 0, x: "4" },
-  { value: 0, x: "5" },
-  { value: 0, x: "6" },
-  { value: 0, x: "7" },
-  { value: 0, x: "8" },
-  { value: 0, x: "9" },
-  { value: 0, x: "10" },
-];
+import React, { useMemo } from "react";
+
 const GameBoard = () => {
   const theme = useTheme();
   const chartWidth = theme.breakpoints.down("sm") ? 800 : 400;
@@ -30,16 +17,10 @@ const GameBoard = () => {
   const stopRisingPoint = gameStateValue.multiplier;
   const startRisingPoint = useSelector(selectMultiplierVlaue).value;
   const speed = gameStateValue.speed;
-  const functionMemoized = useCallback(
-    () =>
-      stopRisingPoint !== 0
-        ? createMatrix(startRisingPoint, stopRisingPoint, matrixArray)
-        : [],
-    [stopRisingPoint]
-  );
-  const target = useMemo(() => {
-    return functionMemoized();
-  }, [stopRisingPoint, startRisingPoint]);
+
+  const data = useMemo(() => {
+    return fillArrayWithTarget(startRisingPoint, stopRisingPoint);
+  }, [stopRisingPoint]);
 
   return (
     <Box
@@ -76,7 +57,7 @@ const GameBoard = () => {
           <LineChart
             width={chartWidth}
             height={397}
-            data={target}
+            data={data}
             key={`data-${gameStateValue.animation}`}
             margin={marginBottom}>
             <Line
@@ -89,7 +70,7 @@ const GameBoard = () => {
               repeatCount={5}
               hide={!stopRisingPoint}
             />
-            <YAxis dataKey="x" domain={[0, 10]} hide />
+            <YAxis dataKey="value" domain={[0, 10]} hide />
             <XAxis dataKey="x" domain={[0, 10]} />
           </LineChart>
         </ResponsiveContainer>
@@ -98,4 +79,4 @@ const GameBoard = () => {
   );
 };
 
-export default GameBoard;
+export default React.memo(GameBoard);
