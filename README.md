@@ -1,25 +1,46 @@
-Guessing Game
+# Guessing Game
+
 This is a guessing game built with React, Material-UI, Redux Toolkit, Socket.IO, and Socket.IO Client.
 
-Getting Started
+## Getting Started
+
 To use the project, follow these instructions:
 
-Clone the Repository
-First, clone the repository to your local machine:
+1.  Clone the repo
+    ```sh
+    git clone https://github.com/Melladmor/guessing-game-splash-task.git
+    ```
+2.  Navigate into the project directory and install the dependencies using Yarn:
 
-git clone https://github.com/Melladmor/guessing-game-splash-task.git
-Install Dependencies
-Navigate into the project directory and install the dependencies using Yarn:
+    ```sh
+    cd guessing-game-splash-task
+    ```
 
-cd guessing-game-splash-task
-yarn install
+    ```sh
+    yarn install
+    ```
 
-Run the React Application
-To run the React application, use the following command:
+3.  Run the React Application
+    ```sh
+    yarn dev
+    ```
+4.  Run the Node Server:
+    ```sh
+    yarn node-server
+    ```
 
-yarn dev
+### Features
 
-Run the Node Server
-To start the Node.js server, use the following command:
+- Real-time multiplayer gameplay with Socket.IO
+- Modern UI with Material-UI
+- Manage game state with Redux Toolkit
+- Customizable game logic with React hooks
 
-yarn node-server
+#### Demo
+
+![Video Recording](https://drive.google.com/file/d/1_ui3c_xSWki4pqHI6khHd57FL6upOJq_/view?usp=sharing)
+
+##### Author
+
+- Mellad Morshed
+- ![Portfolio](https://melladmorshed.netlify.app/)
