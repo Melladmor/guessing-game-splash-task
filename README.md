@@ -43,4 +43,4 @@ To use the project, follow these instructions:
 ##### Author
 
 - Mellad Morshed
-  <a href="https://melladmorshed.netlify.app/" target="_blank">Portfolio</a>
+- <a href="https://melladmorshed.netlify.app/" target="_blank">Portfolio</a>
