@@ -1,5 +1,5 @@
 import { Box, TextField, Typography, useTheme } from "@mui/material";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import PrimaryButton from "../Buttons/PrimaryButton";
 import { setUserName } from "../../redux/slices/gameSlice";

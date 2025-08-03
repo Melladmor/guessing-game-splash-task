@@ -1,10 +1,9 @@
-import { Box, Grid, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Grid, useTheme } from "@mui/material";
 import Ranking from "./components/Ranking/Ranking";
 import Chat from "./components/Chat/Chat";
 import PlayerLayout from "./components/Player/PlayerLayout";
 import InfoLayout from "./components/Info/InfoLayout";
 import GameBoard from "./components/Chart/GameBoard";
-import { useState } from "react";
 
 function App() {
   const theme = useTheme();

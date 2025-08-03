@@ -99,7 +99,7 @@ const Speed = () => {
           aria-label="Small"
           valueLabelDisplay="auto"
           value={speedValue}
-          onChange={(e, value) => selectSpeed(value)}
+          onChange={(_, value) => selectSpeed(value)}
           marks={marks}
           sx={{
             color: "#FF00FF",
