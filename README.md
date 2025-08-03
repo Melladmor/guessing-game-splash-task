@@ -39,6 +39,7 @@ To use the project, follow these instructions:
 #### Demo
 
 <a href="https://drive.google.com/file/d/1_ui3c_xSWki4pqHI6khHd57FL6upOJq_/view?usp=sharing" target="_blank">Video Recording</a>
+<a href="https://guessing-game-splash-task.netlify.app/" target="_blank">Demo</a>
 
 ##### Author
 
